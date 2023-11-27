@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.kbb.com/wp-content/uploads/2021/05/dealer-car-lot.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Car Price Prediction</h1>
+        <form action="{{ url_for("gfg")}}" method="post">
+            <label for="presentprice">Present Price in Lakh:</label>
+            <input type="text" id="presentprice" name="presentprice" placeholder="Present Price">
+
+            <label for="KmsDriven">Kms Driven:</label>
+            <input type="text" id="KmsDriven" name="KmsDriven" placeholder="Kms Driven">
+
+            <label for="Past_Owners">Past Owners:</label>
+            <input type="text" id="Past_Owners" name="Past_Owners" placeholder="Past Owners">
+
+            <label for="Age"> Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Age">
+
+            <label for="Transmission">Transmission:</label>
+            <select id="Transmission" name="Transmission">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+
+            <label for="SellerType"> Seller Type:</label>
+            <select id="SellerType" name="SellerType">
+                <option value="Individual">Individual</option>
+                <option value="Dealer">Dealer</option>
+            </select>
+
+            <label for="fueltype"> Fuel Type:</label>
+            <select id="fueltype" name="fueltype">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
